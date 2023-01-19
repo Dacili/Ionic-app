@@ -14,8 +14,15 @@
   </ion-header>
   <div *ngFor="let quote of favoriteQuotes">
     <h4 style="margin-left:10px; margin-right:10px;cursor:pointer">{{quote?.text}}</h4>
-    
-    <p style="float:right; margin-right:20px;cursor:pointer;margin-bottom:0px"><i>{{quote?.author}}</i></p>
+    <div>
+      <p style="float:right; margin-right:20px;cursor:pointer;margin-bottom:0px"><i>{{quote?.author}}</i></p>
+
+      <!--<div class="container">-->
+      <ion-icon style="font-size:15pt;margin-left:20%;margin-top:13px;cursor:pointer" name="heart-dislike-outline" (click)="presentActionSheet(quote)"></ion-icon>
+    </div>
+  <!--<ion-button >Open</ion-button>
+  <code *ngIf="result"> {{ result }} </code>-->
+    <!--</div>-->
     <ion-item-divider></ion-item-divider>
   </div>
   <div *ngIf="favoriteQuotes.length === 0">

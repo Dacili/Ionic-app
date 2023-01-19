@@ -19,9 +19,10 @@ export class ListQuotesByCategoryComponent implements OnInit {
     this.unselectCategory.emit();
   }
 
+ 
   isFavoriteChanged(quote: any) {
-    quote.isFavorite = !quote.isFavorite;
-    this.quotesService.favoriteUpdateEmitter.next(true);
-  }
+    this.quotesService.updateIsFavorite(quote);
+    //quote.isFavorite = !quote.isFavorite;
 
+  }
 }
