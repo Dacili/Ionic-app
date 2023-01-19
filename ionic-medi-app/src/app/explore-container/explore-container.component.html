@@ -1,8 +1,15 @@
-<div id="container" style="margin-top:20px">
+<div id="container" >
   <!--<strong>{{ name }}</strong>-->
   <br />
-  <h4 style="margin-left:10px; margin-right:10px;">{{quote?.text}}</h4>
+  <div>
+    <ion-icon style="width:30px;height:30px" *ngIf="!quote?.isFavorite" name="heart-outline"  (click)="isFavoriteChanged(quote)"></ion-icon>
+    <ion-icon style="width:30px;height:30px" *ngIf="quote?.isFavorite" name="heart" (click)="isFavoriteChanged(quote)"></ion-icon>
+  </div>
+  <br />
+  <h4 style="margin-left:10px; margin-right:10px;cursor:pointer">{{quote?.text}}</h4>
   <br /><br />
-  <p style="float:right; margin-right:20px"><i>{{quote?.author}}</i></p>
+  <p style="float:right; margin-right:20px;cursor:pointer" ><i>{{quote?.author}}</i></p>
+  <br />
+
   <!--<p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>-->
 </div>

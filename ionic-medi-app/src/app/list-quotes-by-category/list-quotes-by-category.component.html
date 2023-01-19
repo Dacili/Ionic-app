@@ -1,0 +1,12 @@
+<ion-icon name="arrow-back-outline" style=" font-size:15pt;margin-top:5px" (click)="goBackToCategories()"></ion-icon>
+<div *ngFor="let quote of quotes">
+  
+  <div style="display:flex; justify-content:center;margin-top:5px">
+    <ion-icon style="width:30px;height:30px" *ngIf="!quote?.isFavorite" name="heart-outline" (click)="isFavoriteChanged(quote)"></ion-icon>
+    <ion-icon style="width:30px;height:30px" *ngIf="quote?.isFavorite" name="heart" (click)="isFavoriteChanged(quote)"></ion-icon>
+  </div>
+  <h4 style="margin-left:10px; margin-right:10px;cursor:pointer">{{quote?.text}}</h4>
+
+  <p style="float:right; margin-right:20px;cursor:pointer;margin-bottom:0px"><i>{{quote?.author}}</i></p>
+  <ion-item-divider></ion-item-divider>
+</div>

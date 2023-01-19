@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Quote } from '../../models/quote';
+import { Category, QuotesService } from '../quotes.service';
 
 @Component({
   selector: 'app-tab2',
@@ -6,12 +8,20 @@ import { Component } from '@angular/core';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
+  selectedCategory = -1;
+  categoryType = Category;
   categories = Array<string>();
-  constructor() {
-    this.categories.push('Life');
-    this.categories.push('Success');
-    this.categories.push('Health');
-    this.categories.push('Love');
+  quotesBySelectedCategory = Array<Quote>();
+
+  constructor(private quotesService: QuotesService) {
+    this.categories = this.quotesService.getCategories();
   }
 
+  loadQuotesByCategory(category: any) {
+    this.selectedCategory = Number(this.categoryType[category]);
+    console.log(this.categoryType[category])
+    
+    this.quotesBySelectedCategory = this.quotesService.getQuotesByCategory(this.selectedCategory);
+    console.log(this.quotesBySelectedCategory)
+  }
 }

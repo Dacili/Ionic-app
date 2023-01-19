@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="medium">
     <ion-title>
     Daily quote
     </ion-title>
@@ -8,10 +8,9 @@
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
-    <ion-toolbar>
+    <ion-toolbar class="toolbar-container" >
       <ion-title size="large"></ion-title>
     </ion-toolbar>
   </ion-header>
-
   <app-explore-container [quote]="dailyQuote"></app-explore-container>
 </ion-content>

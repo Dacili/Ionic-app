@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Quote } from '../../models/quote';
+import { QuotesService } from '../quotes.service';
 
 @Component({
   selector: 'app-tab3',
@@ -6,7 +8,18 @@ import { Component } from '@angular/core';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
+  favoriteQuotes = Array<Quote>();
 
-  constructor() {}
+  constructor(private quotesService: QuotesService) {
+    this.getFavoriteQuotes();
+    this.quotesService.favoriteUpdateEmitter.subscribe(_ => {
+      console.log()
+      this.getFavoriteQuotes();
+    })
+  }
+
+  getFavoriteQuotes() {
+    this.favoriteQuotes = this.quotesService.getFavoriteQuotes();
+  }
 
 }

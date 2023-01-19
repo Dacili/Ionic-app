@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="medium">
     <ion-title>
       Quotes categories
     </ion-title>
@@ -13,9 +13,24 @@
     </ion-toolbar>
   </ion-header>
 
-  <div style="display:flex; flex-wrap:wrap;margin-left:10px;">
-    <div *ngFor="let category of categories" style="border:1pt solid gray; width:150px; height:150px;margin-right:10px; margin-top:10px;">
-    <p style="display:flex; justify-content:center; padding-top:45px">{{category}}</p></div> 
+  <div style="display:flex; flex-wrap:wrap;margin-left:10px;margin-top:20px" *ngIf="selectedCategory == -1">
+    <div *ngFor="let category of categories" style="box-shadow: 5px 5px 10px #888888; border-radius: 5px; border: 1pt solid gray; width: 150px; height: 150px; margin-right: 10px; margin-top: 10px; cursor: pointer " (click)="loadQuotesByCategory(category)">
+
+      <p style="display:flex; justify-content:center; padding-top:25px;font-size:15pt">
+        <ion-icon *ngIf="category == categoryType[categoryType.Health]" name="medkit-outline"></ion-icon>
+        <ion-icon *ngIf="category == categoryType[categoryType.Success]" name="body-outline"></ion-icon>
+        <ion-icon *ngIf="category == categoryType[categoryType.Love]" name="fitness-outline"></ion-icon>
+        <ion-icon *ngIf="category == categoryType[categoryType.Life]" name="earth-outline"></ion-icon>
+      </p>
+      <p style="display:flex; justify-content:center">
+        {{category}}
+
+      </p>
+
+
+    </div>
+
   </div>
+  <app-list-quotes-by-category *ngIf="selectedCategory != -1" [quotes]="quotesBySelectedCategory" (unselectCategory)="selectedCategory=-1"></app-list-quotes-by-category>
   <!--<app-explore-container name="Tab 2 page"></app-explore-container>-->
 </ion-content>

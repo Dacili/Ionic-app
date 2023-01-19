@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Quote } from '../../models/quote';
+import { QuotesService } from '../quotes.service';
 
 @Component({
   selector: 'app-tab1',
@@ -15,13 +16,8 @@ export class Tab1Page implements OnInit {
     }
 
 
-  constructor() {
-    this.dailyQuote = {
-      id: 1,
-      text: "The important thing is not to stop questioning. Curiosity has its own reason for existing.",
-      author: "Albert Einstein",
-      category: "Knowledge"
-    }
+  constructor(private quotesService: QuotesService) {
+    this.dailyQuote = this.quotesService.quotes[0];
 }
 
 }
