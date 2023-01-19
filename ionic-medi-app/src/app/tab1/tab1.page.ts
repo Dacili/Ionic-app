@@ -10,14 +10,9 @@ import { QuotesService } from '../quotes.service';
 export class Tab1Page implements OnInit {
   dailyQuote: Quote;
 
-  ngOnInit() {
-   
-
-    }
-
-
   constructor(private quotesService: QuotesService) {
     this.dailyQuote = this.quotesService.quotes[0];
-}
+  }
 
+  ngOnInit() { }
 }

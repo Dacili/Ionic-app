@@ -1,6 +1,6 @@
 <ion-icon name="arrow-back-outline" style=" font-size:15pt;margin-top:5px" (click)="goBackToCategories()"></ion-icon>
 <div *ngFor="let quote of quotes">
-  
+
   <div style="display:flex; justify-content:center;margin-top:5px">
     <ion-icon style="width:30px;height:30px" *ngIf="!quote?.isFavorite" name="heart-outline" (click)="isFavoriteChanged(quote)"></ion-icon>
     <ion-icon style="width:30px;height:30px" *ngIf="quote?.isFavorite" name="heart" (click)="isFavoriteChanged(quote)"></ion-icon>

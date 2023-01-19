@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Subject, timer } from 'rxjs';
 import { Quote } from '../models/quote';
 
 export enum Category {
@@ -18,6 +18,7 @@ export enum Category {
 export class QuotesService {
   public quotes = Array<Quote>();
   favoriteUpdateEmitter = new Subject<boolean>();
+  loadingQuotes = false;
 
   constructor() {
     this.fillQuotes();
@@ -74,11 +75,15 @@ export class QuotesService {
   }
 
   updateIsFavorite(quote: Quote) {
+    
     let quoteIndex = this.quotes.findIndex(q => q.id == quote.id);
     if (quoteIndex != -1) { 
     this.quotes[quoteIndex].isFavorite = !this.quotes[quoteIndex].isFavorite;
       this.favoriteUpdateEmitter.next(true);
       this.quotes = this.quotes;
+    }
+    if (this.loadingQuotes) {
+      timer(100).subscribe(_ => this.loadingQuotes = false);
     }
   }
 }

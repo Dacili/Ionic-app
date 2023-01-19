@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Subject } from 'rxjs';
 import { Quote } from '../../models/quote';
 import { QuotesService } from '../quotes.service';
 
@@ -14,15 +13,12 @@ export class ListQuotesByCategoryComponent implements OnInit {
 
   constructor(private quotesService: QuotesService) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
   goBackToCategories() {
     this.unselectCategory.emit();
   }
 
- 
   isFavoriteChanged(quote: any) {
     this.quotesService.updateIsFavorite(quote);
-    //quote.isFavorite = !quote.isFavorite;
-
   }
 }

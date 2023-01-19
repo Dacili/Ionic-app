@@ -12,21 +12,21 @@
       <ion-title size="large">Tab 3</ion-title>
     </ion-toolbar>
   </ion-header>
-  <div *ngFor="let quote of favoriteQuotes">
-    <h4 style="margin-left:10px; margin-right:10px;cursor:pointer">{{quote?.text}}</h4>
-    <div>
-      <p style="float:right; margin-right:20px;cursor:pointer;margin-bottom:0px"><i>{{quote?.author}}</i></p>
-
-      <!--<div class="container">-->
-      <ion-icon style="font-size:15pt;margin-left:20%;margin-top:13px;cursor:pointer" name="heart-dislike-outline" (click)="presentActionSheet(quote)"></ion-icon>
+  <ion-item lines="none" *ngIf="quotesService.loadingQuotes" style="border:0px;margin-top:45%;margin-right:40%">
+    <ion-label></ion-label>
+    <ion-spinner name="circles"></ion-spinner>
+  </ion-item>
+  <div *ngIf="!quotesService.loadingQuotes">
+    <div *ngFor="let quote of favoriteQuotes">
+      <h4 style="margin-left:10px; margin-right:10px;cursor:pointer">{{quote?.text}}</h4>
+      <div>
+        <p style="float:right; margin-right:20px;cursor:pointer;margin-bottom:0px"><i>{{quote?.author}}</i></p>
+        <ion-icon style="font-size:15pt;margin-left:20%;margin-top:13px;cursor:pointer" name="heart-dislike-outline" (click)="presentActionSheet(quote)"></ion-icon>
+      </div>
+      <ion-item-divider></ion-item-divider>
     </div>
-  <!--<ion-button >Open</ion-button>
-  <code *ngIf="result"> {{ result }} </code>-->
-    <!--</div>-->
-    <ion-item-divider></ion-item-divider>
   </div>
-  <div *ngIf="favoriteQuotes.length === 0">
+  <div *ngIf="favoriteQuotes.length === 0 && !quotesService.loadingQuotes">
     <p style="margin-left:10px; margin-top:10px;">You don't have any favorite quote.</p>
   </div>
-  <!--<app-explore-container name="Tab 3 page"></app-explore-container>-->
 </ion-content>

@@ -19,9 +19,6 @@ export class Tab2Page {
 
   loadQuotesByCategory(category: any) {
     this.selectedCategory = Number(this.categoryType[category]);
-    console.log(this.categoryType[category])
-    
     this.quotesBySelectedCategory = this.quotesService.getQuotesByCategory(this.selectedCategory);
-    console.log(this.quotesBySelectedCategory)
   }
 }

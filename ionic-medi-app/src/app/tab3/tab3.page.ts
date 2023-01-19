@@ -12,7 +12,7 @@ export class Tab3Page {
   favoriteQuotes = Array<Quote>();
   result: any;
 
-  constructor(private quotesService: QuotesService, private actionSheetCtrl: ActionSheetController) {
+  constructor(public quotesService: QuotesService, private actionSheetCtrl: ActionSheetController) {
     this.getFavoriteQuotes();
     this.quotesService.favoriteUpdateEmitter.subscribe(_ => {
       console.log()
@@ -31,20 +31,12 @@ export class Tab3Page {
       buttons: [
         {
           text: 'Remove',
-          //role: 'destructive',
           data: {
             action: 'delete',
           },
         },
-        //{
-        //  text: 'Share',
-        //  data: {
-        //    action: 'share',
-        //  },
-        //},
         {
           text: 'Cancel',
-          //role: 'cancel',
           data: {
             action: 'cancel',
           },
@@ -56,9 +48,9 @@ export class Tab3Page {
 
     const result = await actionSheet.onDidDismiss();
     if (result.data.action == 'delete') {
+      this.quotesService.loadingQuotes = true;
       this.quotesService.updateIsFavorite(quote);
     }
     this.result = JSON.stringify(result, null, 2);
   }
-
 }
