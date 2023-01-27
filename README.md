@@ -16,4 +16,9 @@ Installation of ionic:
 Create a new Ionic app (you can choose some of the existing templates):    
 ``` ionic start```   
 Enter the folder of newly created app and run:  
-``` ionic serve```   
+``` ionic serve```     
+If you want to create new component, or services, like you usually do with angular cli (ex. ng g service medi) you could do that similarly:  
+ ```ionic generate```  
+ and add parameters, or just go trough cmd options that it gives you.
+  
+  
