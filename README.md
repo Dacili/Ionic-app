@@ -3,6 +3,12 @@
 
 In short, create mobile app with Angular knowledge and use of Ionic components (https://ionicframework.com/docs/components). Components are behaving a bit differently depeding on which operating systems you're running them (ios vs android).  
 <br>
+Demo of app:  
+
+
+https://user-images.githubusercontent.com/37112852/218172833-a20a3775-68b8-47ee-a7b6-5faa7a317d53.mp4
+
+  
 App specifications:  
 ``` 
    Ionic CLI: 6.20.8   
