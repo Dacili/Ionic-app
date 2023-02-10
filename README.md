@@ -15,6 +15,7 @@ App specifications:
    Ionic Framework: @ionic/angular 6.4.2  
    @angular/cli: 15.1.1  
    @angular/core: ^15.0.0  
+   Cordova was used (not Capacitor) - an open source project that runs web apps across multiple platforms
   ``` 
 
 Installation of ionic:  
@@ -38,6 +39,9 @@ But what about debugging, is it possible to inspect you mobile app, as you do wh
   <img width="958" alt="image" src="https://user-images.githubusercontent.com/37112852/218175414-1c337a35-56d3-40f1-9c27-3eef186ed5ac.png">
  That one is read only view, so if you click on your mobile you will see changes on that left part, if some error occurs, you will see the console errors. Awesome!  
  If you leave your app on mobile, the read only view will become something like this   <img width="887" alt="image" src="https://user-images.githubusercontent.com/37112852/218175936-3a709e0e-6da4-49ab-a028-f33495a41ef9.png">
+ 
+Some of the commands that I was using you can check in this readme https://github.com/Dacili/Ionic-app/edit/master/README.md  
+
 
   
   
