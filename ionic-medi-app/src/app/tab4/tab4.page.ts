@@ -66,9 +66,16 @@ export class Tab4Page {
   async presentAlert() {
     const alert = await this.alertController.create({
       header: 'Alert',
-      subHeader: 'Are you sure you want to create a push notification?',
+      subHeader: 'Are you sure you want to open your camera?',
       message: '',
-      buttons: ['Yes'],
+      buttons: [{
+        text: 'Yes',
+/*        role: 'cancel',*/
+        cssClass: 'secondary',
+        handler: (openCamera) => {
+          this.cameraOn();
+        }
+      }],
     });
 
     await alert.present();
