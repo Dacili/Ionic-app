@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="medium">
+    <ion-title>
+      Random
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div>
+    <ion-button (click)="presentAlert()">Create push notification</ion-button>
+  </div>
+  <div>
+    <ion-button (click)="cameraOn()">Open my camera</ion-button>
+
+    <img style="border:1pt solid red" #newImage src="" alt="no photo"/>
+
+  </div>
+  <!--<ion-datetime></ion-datetime>-->
+</ion-content>

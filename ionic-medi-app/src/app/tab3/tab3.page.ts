@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActionSheetController } from '@ionic/angular';
 import { Quote } from '../../models/quote';
 import { QuotesService } from '../quotes.service';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab3',
@@ -12,7 +13,7 @@ export class Tab3Page {
   favoriteQuotes = Array<Quote>();
   result: any;
 
-  constructor(public quotesService: QuotesService, private actionSheetCtrl: ActionSheetController) {
+  constructor(public quotesService: QuotesService, private actionSheetCtrl: ActionSheetController, private alertController: AlertController) {
     this.getFavoriteQuotes();
     this.quotesService.favoriteUpdateEmitter.subscribe(_ => {
       console.log()

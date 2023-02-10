@@ -14,9 +14,9 @@
   </ion-header>
 
   <div style="display:flex; flex-wrap:wrap;margin-left:10px;margin-top:20px" *ngIf="selectedCategory == -1">
-    <div *ngFor="let category of categories" style="box-shadow: 5px 5px 10px #888888; border-radius: 5px; border: 1pt solid gray; width: 150px; height: 150px; margin-right: 10px; margin-top: 10px; cursor: pointer " (click)="loadQuotesByCategory(category)">
+    <div *ngFor="let category of categories" style="box-shadow: 5px 5px 10px #888888; border-radius: 5px; border: 1pt solid gray; width: 170px; height: 170px; margin-right: 10px; margin-top: 10px; cursor: pointer " (click)="loadQuotesByCategory(category)">
 
-      <p style="display:flex; justify-content:center; padding-top:25px;font-size:15pt">
+      <p style="display:flex; justify-content:center; padding-top:35px;font-size:15pt">
         <ion-icon *ngIf="category == categoryType[categoryType.Health]" name="medkit-outline"></ion-icon>
         <ion-icon *ngIf="category == categoryType[categoryType.Success]" name="body-outline"></ion-icon>
         <ion-icon *ngIf="category == categoryType[categoryType.Love]" name="fitness-outline"></ion-icon>
