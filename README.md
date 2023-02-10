@@ -25,6 +25,7 @@ Enter the folder of newly created app and run:
 ``` ionic serve```     
 If you want to create new component, or services, like you usually do with angular cli (ex. ng g service medi) you could do that similarly:  
  ```ionic generate```  
- and add parameters, or just go trough cmd options that it gives you.
+ and add parameters, or just go trough cmd options that it gives you.  
+ When I was trying to run app on my mobile, I had a lot of issues. First you need to install Android studio, Java SDK. Gradle made me a lot of issues, such as incompatibility with latest Java. Environment variables updates, accepting licences agreements, Unsupported class file major version 61  ionic... And so on...   
   
   
