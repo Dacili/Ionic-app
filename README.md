@@ -29,11 +29,11 @@ If you want to create new component, or services, like you usually do with angul
  When I was trying to run app on my mobile, I had a lot of issues. First you need to install Android studio, Java SDK. Gradle made me a lot of issues, such as incompatibility with latest Java. Environment variables updates, accepting licences agreements, Unsupported class file major version 61  ionic... And so on... When I fixed all issues, you are running app on mobile with this command:   
   ```ionic cordova run android```  
   and if everything went well, you should see command like this,   
-<img width="874" alt="image" src="https://user-images.githubusercontent.com/37112852/218174781-2e89483e-91d9-4b20-827c-e81bd68bf35a.png">
-  And you're able to run it on your mobile! Yaay   
-  But what about debugging, is it possible to inspect you mobile app, as you do when running on your laptop? Yes!  
+<img width="874" alt="image" src="https://user-images.githubusercontent.com/37112852/218174781-2e89483e-91d9-4b20-827c-e81bd68bf35a.png">  
+And you're able to run it on your mobile! Yaay     
+But what about debugging, is it possible to inspect you mobile app, as you do when running on your laptop? Yes!  
   Go to this link: chrome://inspect/devices#devices, you will see something like this:  
-  <img width="566" alt="image" src="https://user-images.githubusercontent.com/37112852/218175212-42d06cce-f638-4f3b-9575-c78b6479ed7e.png">
+  <img width="566" alt="image" src="https://user-images.githubusercontent.com/37112852/218175212-42d06cce-f638-4f3b-9575-c78b6479ed7e.png">  
   At the lowest, you will see my phone connected, if you click on that inspect label, you get view like this:  
   <img width="958" alt="image" src="https://user-images.githubusercontent.com/37112852/218175414-1c337a35-56d3-40f1-9c27-3eef186ed5ac.png">
  That one is read only view, so if you click on your mobile you will see changes on that left part, if some error occurs, you will see the console errors. Awesome!  
